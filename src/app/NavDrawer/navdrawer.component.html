@@ -1,57 +1,83 @@
 <header>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebas" type="text/css" />
-    <h2>iStoryline-ASU</h2>
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    media="screen"
+    href="https://fontlibrary.org/face/bebas"
+    type="text/css"
+  />
+  <h2>iStoryline-ASU</h2>
+  <!--
     <mat-button-toggle value="menu" (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </mat-button-toggle>
-    <span>
-        <mat-button-toggle class="dataSetbutton" value="add" (click)="dataset.toggle()">
-            <mat-icon>add</mat-icon>
-        </mat-button-toggle>
-    </span>
-
-
+  -->
+  <span>
+    <mat-button-toggle
+      class="dataSetbutton"
+      value="add"
+      (click)="dataset.toggle()"
+    >
+      <mat-icon>add</mat-icon>
+    </mat-button-toggle>
+  </span>
 </header>
-<mat-drawer-container class="sidenav-container" autosize>
+<!-- <line-chart></line-chart> -->
+<div style="float:left">
+  <character-app (characterHide)="onCharacterHide($event)"></character-app
+  ><br />
+  <text-component></text-component><br />
+  <shapes-app></shapes-app><br />
+  <story-app></story-app> <br />
+  <color-app (colorChange)="onColorChange($event)"></color-app><br />
+</div>
+<div style="float:left">
+  <line-chart
+    [hideCharacters]="hideCharacters"
+    [newColor]="colorChange"
+    [newCharacter]="newCharacter"
+  ></line-chart>
+</div>
+<!--
+  <mat-drawer-container class="sidenav-container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
-
-        <character-app></character-app><br />
-        <text-component></text-component><br />
-        <shapes-app></shapes-app><br />
-        <story-app></story-app> <br />
-
-
+      <character-app></character-app><br />
+      <text-component></text-component><br />
+      <shapes-app></shapes-app><br />
+      <story-app></story-app> <br />
     </mat-drawer>
-
-    <graph></graph>
-
-
-    <mat-drawer #dataset class="sidenav" mode="side" position="end">
-        <button mat-raised-button color="secondary">
-            <mat-icon>description</mat-icon>
-            Data Set I
-        </button><br />
-        <button mat-raised-button color="secondary">
-            <mat-icon>description</mat-icon>
-            Data Set II
-        </button>
-        <br />
-        <button mat-raised-button color="secondary">
-            <mat-icon>description</mat-icon>
-            Data Set III
-        </button>
-
-    </mat-drawer>
-
-    <div class="main-content">
-        <!-- <sub-template [hidden]="!showText"></sub-template> -->
-
+    <div style="width:200px;" class="main-content">
+      <h1>Main Content</h1>
+      <div>
+        <h2>{{ title }}</h2>
+        <line-chart></line-chart>
+      </div>
     </div>
+  </mat-drawer-container>
+-->
+<!-- <graph></graph> -->
+<!-- <draggable-app></draggable-app> -->
+<!--
+  <mat-drawer #dataset class="sidenav" mode="side" position="end">
+    <button mat-raised-button color="secondary">
+      <mat-icon>description</mat-icon>
+      Data Set I</button
+    ><br />
+    <button mat-raised-button color="secondary">
+      <mat-icon>description</mat-icon>
+      Data Set II
+    </button>
+    <br />
+    <button mat-raised-button color="secondary">
+      <mat-icon>description</mat-icon>
+      Data Set III
+    </button>
+  </mat-drawer>
+-->
 
+<!-- <sub-template [hidden]="!showText"></sub-template> -->
 
-
-
-
-
-</mat-drawer-container>
+<!-- <line-chart></line-chart> -->

@@ -7,5 +7,10 @@ import { Component } from "@angular/core";
 })
 export class TextComponent {
   title = "Text";
+  showTextBox: boolean = false;
   constructor() {}
+  handleClick(event) {
+    console.log("clicked", event.target);
+    this.showTextBox = true;
+  }
 }
